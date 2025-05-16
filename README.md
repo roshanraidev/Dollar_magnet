@@ -1,76 +1,44 @@
-This project is a crypto trading bot dashboard built with Streamlit that connects to your Binance account 
-and helps you trade cryptocurrencies automatically using a simple trading strategy. 
-Below is an explanation for new users about what the project does and how the script works.
+# Dollar_magnet (Professor Bot)
 
-What is this project about?
+A crypto trading bot dashboard built with Streamlit for Binance users. Analyze, simulate, and automate your crypto trading with transparent strategies and risk management tools.
 
-Purpose:
-This project is a web-based application called "Professor Bot" that lets you connect your Binance account, 
-view your balance, analyze crypto market data, and (optionally) run an automated trading bot using technical indicators like RSI and MACD.
-Features:
-Secure Binance API login (your keys are not stored long-term).
-Visual dashboard for prices, indicators, and your bot’s trades.
-Simulated or live trading (enable real trading mode if you want actual orders placed).
-Basic risk management (stop loss, take profit).
-Downloadable trading logs.
-How does the script work?
+## Features
 
-1. App Initialization
+- Secure Binance API login (your keys aren't stored long-term)
+- Interactive dashboard for prices, technical indicators, and trade history
+- Technical indicators (RSI,MACD) 
+- Simulated or live trading (enable "Real Trading Mode" for actual orders)
+- Risk management: stop loss, take profit
+- Downloadable trading logs
+- Auto trading with 60-second refresh
 
-The app uses Streamlit, so it creates a web dashboard.
-It asks you to enter your Binance API Key and Secret (these are required to access your account data and place trades).
-2. Login & Validation
+## How It Works
 
-When you log in, the script checks if your API credentials are valid by making a simple Binance API call.
-If successful, you’ll see the main dashboard; otherwise, you get an error.
-3. Main Trading Dashboard
+1. **Login:** Enter your Binance API key and secret to authenticate.
+2. **Dashboard Controls:** 
+   - Choose a trading pair (e.g., BTCUSDT)
+   - Select chart interval (1m, 5m, 15m, etc.)
+   - Set your trading capital and enable/disable auto or real trading
+3. **Strategy:**
+   - **Buy:** If RSI < 30 and MACD is bullish
+   - **Sell:** If loss > 15% (stop loss), or profit 20-30% and MACD bearish (take profit), or profit > 30% and MACD bearish
+4. **Visualization:** View price, RSI, MACD charts, and your trade log (downloadable as CSV)
+5. **Automation:** Auto-trading mode checks and trades every minute
 
-Sidebar Controls:
-Select the trading pair (like BTCUSDT).
-Select the chart interval (1 minute, 5 minutes, etc.).
-See your available USDT balance.
-Choose how much capital to allocate for trading.
-Toggle "Run Auto Trading" and "Enable Real Trading Mode".
-If “Real Trading” is off, the bot only simulates trades.
-If on, the bot can place real market orders!
-Metrics:
-Shows your trading capital, current price, unrealized profit/loss, and RSI indicator value.
-4. Fetching Data from Binance
+## Getting Started
 
-The app fetches historical price (“candle” or “kline”) data for the selected symbol and interval.
-5. Technical Indicators
+1. Install requirements:
+2. Run the app:
+3. Open the web browser to the link shown in the terminal.
+4. Enter your Binance API key and secret.
+5. Set preferences in the sidebar and optionally enable auto/real trading.
 
-Calculates RSI (Relative Strength Index) and MACD (Moving Average Convergence Divergence) using the pandas_ta library.
-6. Trading Logic (Strategy)
+## Notes
 
-The script checks if you’re in a trade or not.
-Entry (Buy):
-Buys if RSI is below 30 (oversold) and MACD is bullish.
-Buys enough amount to not violate Binance’s minimum notional rule.
-Exit (Sell):
-Sells if:
-Loss is more than 15% (stop loss).
-Profit is 20-30% and MACD turns bearish (take profit).
-Profit is over 30% and MACD turns bearish (strong take profit).
-All trades and their outcomes are logged.
-7. Visualization
+- **Risk:** Enabling "Real Trading Mode" will place real trades on your Binance account. Use with caution!
+- **Security:** Never share your API keys. Only use your own keys and keep them safe.
+- **Educational Purpose:** This bot is for educational purposes and demonstration only.
 
-Displays line charts for price, RSI, and MACD using matplotlib.
-Shows your trade log in a table, with an option to download as CSV.
-8. Auto-refresh
+---
 
-If auto trading is enabled, the page refreshes every 60 seconds to fetch new data and re-evaluate trades.
-How to Use
-
-Install requirements (Streamlit, pandas, pandas_ta, matplotlib, python-binance).
-Run the app:
-Code
-streamlit run app.py
-Open the web browser to the link shown in the terminal.
-Enter your Binance API key and secret.
-Set your preferences in the sidebar, and optionally enable auto trading and real trading mode.
-Important Notes
-
-Risk: Enabling "Real Trading Mode" will place real trades on your Binance account. Use with caution!
-Security: Never share your API keys with anyone. Only use with your own keys and keep them safe.
-Educational purpose: This bot is a simple example and not meant for serious trading without understanding the risks.
+© Created by @Mr. Professor
