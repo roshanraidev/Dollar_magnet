@@ -1,0 +1,7 @@
+streamlit
+pandas
+pandas_ta==0.3.14b
+matplotlib==3.5.1
+binance==1.0.15
+python-dotenv==0.19.2
+numpy==1.19.5
