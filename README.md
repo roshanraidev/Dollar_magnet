@@ -1,9 +1,12 @@
-This project is a crypto trading bot dashboard built with Streamlit that connects to your Binance account and helps you trade cryptocurrencies automatically using a simple trading strategy. Below is an explanation for new users about what the project does and how the script works.
+This project is a crypto trading bot dashboard built with Streamlit that connects to your Binance account 
+and helps you trade cryptocurrencies automatically using a simple trading strategy. 
+Below is an explanation for new users about what the project does and how the script works.
 
 What is this project about?
 
 Purpose:
-This project is a web-based application called "Professor Bot" that lets you connect your Binance account, view your balance, analyze crypto market data, and (optionally) run an automated trading bot using technical indicators like RSI and MACD.
+This project is a web-based application called "Professor Bot" that lets you connect your Binance account, 
+view your balance, analyze crypto market data, and (optionally) run an automated trading bot using technical indicators like RSI and MACD.
 Features:
 Secure Binance API login (your keys are not stored long-term).
 Visual dashboard for prices, indicators, and your bot’s trades.
